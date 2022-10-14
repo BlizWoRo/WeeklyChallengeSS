@@ -1,0 +1,19 @@
+public class ListNode {
+     int val;
+     ListNode next;
+     ListNode(int x) {
+         val = x;
+         next = null;
+     }
+ }
+
+public class Solution {
+    public ListNode intersectNode(ListNode startA, ListNode startB) {
+        ListNode a = startA, b = startB;
+        while (a != b) {
+            a = a == null ? startB : a.next;
+            b = b == null ? startA : b.next;
+        }
+        return a;
+    }
+}
